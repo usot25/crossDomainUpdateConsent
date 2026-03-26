@@ -67,12 +67,17 @@
         }
 
         h2 {
-            font-size: 32px;
+            font-size: 28px;
             margin-bottom: 10px;
         }
 
         p {
-            font-size: 18px;
+            font-size: 20px;
+            max-width: 600px;
+        }
+
+        .link-list {
+            font-size: 20px;
             max-width: 600px;
         }
 
@@ -117,8 +122,8 @@
     <!-- Container for centered alignment -->
     <div style="width:560px; display:flex; justify-content:center; align-items:center; gap:10px; margin:30px auto;">
 
-        <!-- Link to Page using the OneTrustSetConsentProfile method -->
-        <div><button class="btn" onclick='decorate()'>Link to Page, OneTrustSetConsentProfile</button>
+        <!-- Link to Domain 2 using the OneTrustSetConsentProfile method -->
+        <div><button class="btn" onclick='decorate()'>Redirect Domain 2 Button, OneTrustSetConsentProfile</button>
         </div>
 
         <!-- OneTrust cookies settings button -->
@@ -142,7 +147,6 @@
             btn.textContent = visible ? 'Hide Cookie List' : 'Show Cookie List';
         });
     </script>
-
     <!--  OneTrust UpdateConsent method for getting domain, oneTrustActiveGroup IDs, identifier, dateStamp and decorate the URL with these parameters  -->
     <script>
         function decorate() {
@@ -156,12 +160,28 @@
             console.log("Origin dateStamp:", dateStamp)
 
             location.href = `https://onetoso.com/Utsav/domain2.html?domain=${domain}&identifier=${identifier}&oneTrustActiveGroups=${oneTrustActiveGroups}&dateStamp=${dateStamp}`
+
+            // Navigate to the Location.reload article by replacing this page
+            // window.location.replace(
+            //     `https://onetoso.com/Utsav/domain2.html?domain=${domain}&identifier=${identifier}&oneTrustActiveGroups=${oneTrustActiveGroups}&dateStamp=${dateStamp}`
+            // );
         }
     </script>
 
+    <!-- YouTube Embed -->
+    <h2>youtube video</h2>
     <div class="embed-box">
-        <!-- Soundcloud -->
-        <h2>soundcloud audio</h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/qBIx8hEn6q0?si=xpR3pCcOMRp9r2om"
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+        </iframe>
+    </div>
+    </br>
+
+    <!-- Soundcloud -->
+    <h2>soundcloud audio</h2>
+    <div class="embed-box">
         <iframe width="560" height="315" scrolling="no" frameborder="no" allow="autoplay"
             src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A1195452289&color=%2342443c&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
         <div
@@ -173,27 +193,19 @@
         </div>
     </div>
     </br>
+
+    <!-- Vimeo Embed -->
+    <h2>vimeo video</h2>
     <div class="embed-box">
-        <!-- YouTube Embed -->
-        <h2>youtube video</h2>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/qBIx8hEn6q0?si=xpR3pCcOMRp9r2om"
-            title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen>
-        </iframe>
-    </div>
-    </br>
-    <div class="embed-box">
-        <!-- Vimeo Embed -->
-        <h2>vimeo video</h2>
         <iframe src="https://player.vimeo.com/video/79419001" width="560" height="315" frameborder="0"
             allow="autoplay; fullscreen; picture-in-picture" allowfullscreen>
         </iframe>
     </div>
     </br>
+
+    <!-- Maps Embed -->
+    <h2>google maps</h2>
     <div class="embed-box">
-        <!-- Maps Embed -->
-        <h2>google maps</h2>
         <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3316.7007645344092!2d-84.36557542469244!3d33.768397632665625!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88f5045a3d87dc65%3A0x7c7b07dd7a300891!2sOneTrust!5e0!3m2!1sen!2sin!4v1764756042260!5m2!1sen!2sin"
             width="560" height="315" style="border:0;" allowfullscreen="" loading="lazy"
@@ -201,10 +213,10 @@
         </iframe>
     </div>
     </br>
-    <div class="embed-box">
-        <!-- Example of another 3rd-party embed (e.g., Twitter) -->
-        <h2>twitter micropost</h2>
 
+    <!-- Example of another 3rd-party embed (e.g., Twitter) -->
+    <h2>twitter micropost</h2>
+    <div class="embed-box">
         <blockquote class="twitter-tweet" data-media-max-width="560">
             <p lang="en" dir="ltr">📣 Introducing the next chapter for OneTrust!<br><br>Governance is entering a new
                 era.<br><br>Systems now adapt in real time, make decisions autonomously, and run continuously across the
@@ -216,13 +228,38 @@
 
     </div>
     </br>
-    <p>
-        <a href="https://developer.onetrust.com/onetrust/docs/javascript-api" target="_blank"
-            style="color:#0073e6; text-decoration:underline;">
-            Web CMP JavaScript Methods
-        </a>
-    </p>
 
+    <ul class="link-list">
+        <li><a href="https://developer.onetrust.com/onetrust/docs/javascript-api" target="_blank">Web CMP JavaScript
+                Methods</a></li>
+        <li><a href="https://developer.onetrust.com/onetrust/docs/javascript-api#get-data-subject-id"
+                target="_blank">Get Data Subject ID - OneTrust.getDataSubjectId()</a></li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Location/hostname" target="_blank">Location:
+                hostname property</a></li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Location/hostname" target="_blank">Location:
+                hostname property</a></li>
+    </ul>
+
+
+    <div class="link-list">
+        Result: <code id="dsid">Waiting...</code>
+    </div>
+
+    <script>
+        function OptanonWrapper() {
+            const el = document.getElementById("dsid");
+
+            try {
+                const dsid = OneTrust.getDataSubjectId();
+                console.log("DSID:", dsid);
+                el.textContent = dsid || "(empty/undefined)";
+            } catch (e) {
+                console.error(e);
+                el.textContent = "Error: " + (e?.message || e);
+            }
+        }
+    </script>
+    ``
     <h2>end of the page;</h2>
 </body>
 
