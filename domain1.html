@@ -238,12 +238,18 @@
                 hostname property - window.location.hostname</a></li>
         <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Location/href" target="_blank">Location: href
                 property - window.location.href</a></li>
+        <li>OnetrustActiveGroups</li>
+        <li></li>
     </ul>
 
 
     <div class="link-list">
         Result: <code id="dsid">Waiting...</code>
     </div>
+    <div class="link-list">
+        Result: <code id="activeGroups">Waiting...</code>
+    </div>
+
 
     <script>
         function OptanonWrapper() {
@@ -257,6 +263,18 @@
                 console.error(e);
                 el.textContent = "Error: " + (e?.message || e);
             }
+
+            const el1 = document.getElementById("activeGroups");
+
+            try {
+                const activeGroups = window.OnetrustActiveGroups;
+                console.log("Active Groups:", activeGroups);
+                el1.textContent = activeGroups || "(empty/undefined)";
+            } catch (e) {
+                console.error(e);
+                el1.textContent = "Error: " + (e?.message || e);
+            }
+            
         }
     </script>
     
