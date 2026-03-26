@@ -15,7 +15,43 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cross Domain 1 - URL Decoration</title>
-    <link rel="icon" type="image/png" href="https://www.google.com/s2/favicons?domain=https://www.onetrust.com/" />
+    <link rel="icon" type="image/png" href="https://www.google.com/s2/favicons?domain=www.onetrust.com" />
+
+    <!-- OneTrust Cookies Consent Notice start for usot25.github.io/crossDomainUpdateConsent/domain1.html -->
+    <script type="text/javascript"
+        src="https://cdn.cookielaw.org/consent/019d27a1-0bf4-71cc-8ba0-3e9d60b992bb/OtAutoBlock.js"></script>
+    <script src="https://cdn.cookielaw.org/consent/019d27a1-0bf4-71cc-8ba0-3e9d60b992bb/otSDKStub.js" data-language="en"
+        type="text/javascript" charset="UTF-8" data-domain-script="019d27a1-0bf4-71cc-8ba0-3e9d60b992bb"></script>
+    <script type="text/javascript">
+        function getDateISO() {
+            return new Date().toISOString();
+        }
+        function OptanonWrapper() {
+            window.dispatchEvent(new CustomEvent("banner-loaded", { detail: { source: "OneTrust" } }));
+            console.log("banner-loaded2");
+            console.log("CMP loaded at:", getDateISO());
+        }
+
+    </script>
+    <!-- OneTrust Cookies Consent Notice end for usot25.github.io/crossDomainUpdateConsent/domain1.html -->
+
+
+    <!-- <script>
+        function downloadJSAtOnload() {
+            var element2 = document.createElement("script");
+            element2.setAttribute("src", 'https://cdn.cookielaw.org/scripttemplates/otSDKStub.js')
+            element2.setAttribute("data-document-language", 'true')
+            element2.setAttribute("type", 'text/javascript')
+            element2.setAttribute("charset", "UTF-8")
+            element2.setAttribute("data-domain-script", '019d27a1-0bf4-71cc-8ba0-3e9d60b992bb-test')
+            var element = document.createElement("script");
+            element.setAttribute("type", 'text/javascript')
+            element.innerHTML = 'function OptanonWrapper() {var eventGreenCreated = new Event(\'banner-loaded\');window.dispatchEvent(eventGreenCreated); console.log(\'banner-loaded2\')}';
+            document.head.appendChild(element2, element);
+            document.head.appendChild(element);
+        } downloadJSAtOnload()
+    </script> -->
+
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -67,6 +103,11 @@
         .btn-primary:hover {
             background-color: #374151;
         }
+
+        .embed-box {
+            width: fit-content;
+            border: 0.02px solid #302a27;
+        }
     </style>
 </head>
 
@@ -115,57 +156,66 @@
             console.log("Origin dateStamp:", dateStamp)
 
             location.href = `https://onetoso.com/Utsav/domain2.html?domain=${domain}&identifier=${identifier}&oneTrustActiveGroups=${oneTrustActiveGroups}&dateStamp=${dateStamp}`
-
-
         }
     </script>
 
-    <!-- Soundcloud -->
-    <h2>soundcloud audio</h2>
-    <iframe width="560" height="315" scrolling="no" frameborder="no" allow="autoplay"
-        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A1195452289&color=%2342443c&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
-    <div
-        style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
-        <a href="https://soundcloud.com/isaiasmatiaba" title="Isaias Matiaba" target="_blank"
-            style="color: #cccccc; text-decoration: none;">Isaias Matiaba</a> · <a
-            href="https://soundcloud.com/isaiasmatiaba/rita-ritaki" title="Rita Ritaki" target="_blank"
-            style="color: #cccccc; text-decoration: none;">Rita Ritaki</a>
+    <div class="embed-box">
+        <!-- Soundcloud -->
+        <h2>soundcloud audio</h2>
+        <iframe width="560" height="315" scrolling="no" frameborder="no" allow="autoplay"
+            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A1195452289&color=%2342443c&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+        <div
+            style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
+            <a href="https://soundcloud.com/isaiasmatiaba" title="Isaias Matiaba" target="_blank"
+                style="color: #cccccc; text-decoration: none;">Isaias Matiaba</a> · <a
+                href="https://soundcloud.com/isaiasmatiaba/rita-ritaki" title="Rita Ritaki" target="_blank"
+                style="color: #cccccc; text-decoration: none;">Rita Ritaki</a>
+        </div>
     </div>
+    </br>
+    <div class="embed-box">
+        <!-- YouTube Embed -->
+        <h2>youtube video</h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/qBIx8hEn6q0?si=xpR3pCcOMRp9r2om"
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+        </iframe>
+    </div>
+    </br>
+    <div class="embed-box">
+        <!-- Vimeo Embed -->
+        <h2>vimeo video</h2>
+        <iframe src="https://player.vimeo.com/video/79419001" width="560" height="315" frameborder="0"
+            allow="autoplay; fullscreen; picture-in-picture" allowfullscreen>
+        </iframe>
+    </div>
+    </br>
+    <div class="embed-box">
+        <!-- Maps Embed -->
+        <h2>google maps</h2>
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3316.7007645344092!2d-84.36557542469244!3d33.768397632665625!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88f5045a3d87dc65%3A0x7c7b07dd7a300891!2sOneTrust!5e0!3m2!1sen!2sin!4v1764756042260!5m2!1sen!2sin"
+            width="560" height="315" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+    </br>
+    <div class="embed-box">
+        <!-- Example of another 3rd-party embed (e.g., Twitter) -->
+        <h2>twitter micropost</h2>
 
-    <!-- YouTube Embed -->
-    <h2>youtube video</h2>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/qBIx8hEn6q0?si=xpR3pCcOMRp9r2om"
-        title="YouTube video player"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen>
-    </iframe>
+        <blockquote class="twitter-tweet" data-media-max-width="560">
+            <p lang="en" dir="ltr">📣 Introducing the next chapter for OneTrust!<br><br>Governance is entering a new
+                era.<br><br>Systems now adapt in real time, make decisions autonomously, and run continuously across the
+                business. <a href="https://t.co/OUKv5tRxVz">pic.twitter.com/OUKv5tRxVz</a></p>&mdash; OneTrust
+            (@OneTrust)
+            <a href="https://twitter.com/OneTrust/status/2036070374203342889?ref_src=twsrc%5Etfw">March 23, 2026</a>
+        </blockquote>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-    <!-- Vimeo Embed -->
-    <h2>vimeo video</h2>
-    <iframe src="https://player.vimeo.com/video/79419001" width="560" height="315" frameborder="0"
-        allow="autoplay; fullscreen; picture-in-picture" allowfullscreen>
-    </iframe>
-
-    <!-- Maps Embed -->
-    <h2>google maps</h2>
-    <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3316.7007645344092!2d-84.36557542469244!3d33.768397632665625!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88f5045a3d87dc65%3A0x7c7b07dd7a300891!2sOneTrust!5e0!3m2!1sen!2sin!4v1764756042260!5m2!1sen!2sin"
-        width="560" height="315" style="border:0;" allowfullscreen="" loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade">
-    </iframe>
-
-    <!-- Example of another 3rd-party embed (e.g., Twitter) -->
-    <h2>twitter micropost</h2>
-
-    <blockquote class="twitter-tweet" data-media-max-width="560">
-        <p lang="en" dir="ltr">📣 Introducing the next chapter for OneTrust!<br><br>Governance is entering a new
-            era.<br><br>Systems now adapt in real time, make decisions autonomously, and run continuously across the
-            business. <a href="https://t.co/OUKv5tRxVz">pic.twitter.com/OUKv5tRxVz</a></p>&mdash; OneTrust (@OneTrust)
-        <a href="https://twitter.com/OneTrust/status/2036070374203342889?ref_src=twsrc%5Etfw">March 23, 2026</a>
-    </blockquote>
-    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-
+    </div>
+    </br>
     <p>
         <a href="https://developer.onetrust.com/onetrust/docs/javascript-api" target="_blank"
             style="color:#0073e6; text-decoration:underline;">
